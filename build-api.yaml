@@ -1,0 +1,3 @@
+--this script would build the .net core api and services--
+--2 configurations would be built for, uat and production--
+--builds would be archived and labeled using GUIDS for easier retrieval--

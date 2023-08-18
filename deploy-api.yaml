@@ -1,0 +1,3 @@
+--this script would deploy the newly built api files--
+--one target would be uat which doesn't need any approval beyond a successful pr--
+--the other target would be production which would leveral Environments in Azure Devops to require approval from the appropriate individual--

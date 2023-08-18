@@ -3,7 +3,40 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore", "bookstore\bookstore.csproj", "{1A54CF01-D655-4CBA-AC19-53B4F4137A1C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{70216E2E-5FF7-4FCD-8160-E698F54D08C5}"
+	ProjectSection(SolutionItems) = preProject
+		build-api.yaml = build-api.yaml
+		build-app.yaml = build-app.yaml
+		deploy-api.yaml = deploy-api.yaml
+		deploy-app.yaml = deploy-app.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-data", "bookstore-migrations\bookstore-data.csproj", "{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bookstore-ui", "bookstore-ui\", "{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56615"
+		Debug.AspNetCompiler.PhysicalPath = "bookstore-ui\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56615\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56615"
+		Release.AspNetCompiler.PhysicalPath = "bookstore-ui\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56615\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56615"
+		SlnRelativePath = "bookstore-ui\"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-tests", "bookstore-tests\bookstore-tests.csproj", "{BED539DF-5B6E-46FA-8749-53807F22C2EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-api", "bookstore-api\bookstore-api.csproj", "{CCE21111-AA49-4761-8A60-26C1D0882EDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +44,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A54CF01-D655-4CBA-AC19-53B4F4137A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A54CF01-D655-4CBA-AC19-53B4F4137A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A54CF01-D655-4CBA-AC19-53B4F4137A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A54CF01-D655-4CBA-AC19-53B4F4137A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BED539DF-5B6E-46FA-8749-53807F22C2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED539DF-5B6E-46FA-8749-53807F22C2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED539DF-5B6E-46FA-8749-53807F22C2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED539DF-5B6E-46FA-8749-53807F22C2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
