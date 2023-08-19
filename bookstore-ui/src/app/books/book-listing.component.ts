@@ -6,17 +6,12 @@ import { Book } from '../../models/book.model';
 
 @Component({
   selector: 'book-list',
-  template: `
-    <div *ngFor="let book of books$ | async">
-      {{ book.title }}
-      {{ book.description }}
-    </div>
-  `,
+  template: `../book-listing.component.html`,
 })
 export class TodoComponent {
-  todos$: Observable<Book[]> = this.todoQuery.selectAll();
+  books$: Observable<Book[]> = this.todoQuery.selectAll();
 
-  constructor(private bookService: BookService, private todoQuery: BookQuery) { }
+  constructor(private bookService: BookService, private todoQuery: BookQuery) {}
 
   // Example method to add a book
   addBook() {
@@ -29,4 +24,11 @@ export class TodoComponent {
   }
 
   // ...other methods
+  ngOnInit() {
+    this.bookService.fetchBooks();
+  }
+
+  refreshBooks() {
+    this.bookService.fetchBooks();
+  }
 }
