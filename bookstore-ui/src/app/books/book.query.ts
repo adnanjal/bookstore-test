@@ -1,6 +1,6 @@
 import { QueryEntity } from '@datorama/akita';
-import { BookStore, BookState } from '../stores/book.store';
-import { Book } from '../models/book.model';
+import { BookStore, BookState } from './book.store';
+import { Book } from './book.model';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })

@@ -1,5 +1,5 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
-import { Book } from '../models/book.model';
+import { Book } from './book.model';
 
 export interface BookState extends EntityState<Book> { }
 

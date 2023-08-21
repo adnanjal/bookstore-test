@@ -9,5 +9,8 @@ export class PrimaryButtonComponent {
   @Input() label: string;
   @Output() onClick = new EventEmitter<void>();
 
-  constructor() {}
+  constructor(label: string, onclick: EventEmitter<void>) {
+    this.label = label;
+    this.onClick = onclick;
+  }
 }
