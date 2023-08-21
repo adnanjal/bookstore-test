@@ -10,10 +10,12 @@ using System.Text.Json.Serialization;
 
 namespace bookstore.Controllers
 {
+    //sample book controller that would handle CRUD
     [Route("api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase
     {
+        //uses repo rather than app db context
         private readonly IBookRepository _repository;
         public BookController (IBookRepository bookRepository) {
             _repository = bookRepository;

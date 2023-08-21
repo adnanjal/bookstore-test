@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace bookstore_migrations.Services
 {
+    //service that would handle any additional logic/data manipulation that needs to be done
     public class BookService : IBookService
     {
         private readonly IBookRepository _repository;

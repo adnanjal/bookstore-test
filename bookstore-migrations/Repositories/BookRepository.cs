@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace bookstore_migrations.Repositories
 {
+    //would handle actual data retrieval operations from db context
     public class BookRepository : IBookRepository
     {
         private readonly AppDbContext _context;
