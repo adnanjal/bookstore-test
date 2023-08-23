@@ -1,4 +1,8 @@
-<div *ngFor="let book of books$ | async">
-  {{ book.title }}
-  {{ book.description }}
+<div>
+  <h1>Books</h1>
+  <div *ngFor="let book of books$ | async">
+    {{ book.title }}
+    {{ book.description }}
+  </div>
+  <app-primary-button label="Refresh Books"></app-primary-button>
 </div>

@@ -6,7 +6,7 @@ import { BookService } from './book.service';
 
 @Component({
   selector: 'book-list',
-  template: `../book-listing.component.html`,
+  template: `./book-listing.component.html`,
 })
 export class BookListComponent {
   books$: Observable<Book[]> = this.todoQuery.selectAll();

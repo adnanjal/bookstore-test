@@ -14,8 +14,8 @@ export class BookService {
     this.bookStore.add(book);
   }
 
-  fetchBooks() {
-    this.http.get(environment.apiURL).subscribe((data: any) => {
+  fetchBooks(page: number = 0) {
+    this.http.get(environment.apiURL + '/Book/ByPage?' + 'page=' + page).subscribe((data: any) => {
       this.bookStore.set(data);
     });
   }

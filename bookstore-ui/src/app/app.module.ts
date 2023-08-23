@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 
 import { environment } from './environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { BookListComponent } from './books/book-listing.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookListComponent
   ],
+  exports: [BookListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
