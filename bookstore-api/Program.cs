@@ -12,9 +12,10 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//I recommend running the project using IIS. Docker would be a best case scenario for the architecture. Unfortunately, the web.config
+//would require additional details like host IP address to run correctly making it harder to demo like this. 
+
 // Add services to the container.
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -26,36 +27,38 @@ var configuration = new ConfigurationBuilder()
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 
-//adds user identity authentication
+//adds service making them injectable
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+////adds user identity authentication
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
         .AddEntityFrameworkStores<AppDbContext>()
         .AddDefaultTokenProviders();
 
-//adds service making them injectable
-builder.Services.AddScoped<IBookService, BookService>();
+// JWT Authentication using Asp.net identity
+// Disabled as it needs additional setup
+//var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue("JwtKey", "")));
+//var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-// JWT Authentication
-var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetValue("JwtKey", "")));
-var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-builder.Services.AddAuthentication(opt =>
-    {
-        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = configuration.GetValue("JwtIssuer", ""),
-            ValidAudience = configuration.GetValue("JwtAudience", ""),
-            IssuerSigningKey = creds.Key
-        };
-    });
+//builder.Services.AddAuthentication(opt =>
+//    {
+//        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//    })
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = true,
+//            ValidateAudience = true,
+//            ValidateLifetime = true,
+//            ValidateIssuerSigningKey = true,
+//            ValidIssuer = configuration.GetValue("JwtIssuer", ""),
+//            ValidAudience = configuration.GetValue("JwtAudience", ""),
+//            IssuerSigningKey = creds.Key
+//        };
+//    });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

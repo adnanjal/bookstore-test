@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{
 		deploy-app.yaml = deploy-app.yaml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-data", "bookstore-migrations\bookstore-data.csproj", "{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bookstore-ui", "bookstore-ui\", "{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -38,16 +36,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-tests", "bookstor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-api", "bookstore-api\bookstore-api.csproj", "{CCE21111-AA49-4761-8A60-26C1D0882EDE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bookstore-data", "bookstore-data\bookstore-data.csproj", "{D80AA99F-E338-4B6F-9D02-C5444F36886B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F78C07D5-0EF0-4A3B-B6FD-2185505B8AE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB12CA1A-289F-4CA5-86DC-D6A42990AC10}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -60,6 +56,10 @@ Global
 		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCE21111-AA49-4761-8A60-26C1D0882EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80AA99F-E338-4B6F-9D02-C5444F36886B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80AA99F-E338-4B6F-9D02-C5444F36886B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80AA99F-E338-4B6F-9D02-C5444F36886B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80AA99F-E338-4B6F-9D02-C5444F36886B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

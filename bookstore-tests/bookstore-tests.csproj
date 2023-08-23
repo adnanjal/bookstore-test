@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\bookstore-api\bookstore-api.csproj" />
-    <ProjectReference Include="..\bookstore-migrations\bookstore-data.csproj" />
+    <ProjectReference Include="..\bookstore-data\bookstore-data.csproj" />
   </ItemGroup>
 
 </Project>

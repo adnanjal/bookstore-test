@@ -1,6 +1,6 @@
 using bookstore_migrations.Repositories;
-using bookstore_migrations.Services;
 using Moq;
+using bookstore_migrations.Services;
 
 namespace bookstore_tests;
 
@@ -11,7 +11,11 @@ public class BookTests
     {
         // Arrange
         var mockRepo = new Mock<IBookRepository>();
-        var book = new Book(1, title: "Title", description: "Description", author: new Author(1, "First", "Last", "FL"));
+        var book = new Book();
+        book.AuthorId = 1;
+        book.Title = "Test title";
+        book.Description = "Test description";
+
         var service = new BookService(mockRepo.Object);
 
         // Act
