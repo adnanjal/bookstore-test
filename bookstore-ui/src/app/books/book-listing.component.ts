@@ -16,7 +16,7 @@ export class BookListComponent {
   // Example method to add a book
   addBook() {
     const book: Book = {
-      id: -1,
+      id: 1,
       title: 'New Book Title',
       description: 'New Description',
     };
