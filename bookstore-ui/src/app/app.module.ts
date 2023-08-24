@@ -14,7 +14,6 @@ import { BookListComponent } from './books/book-listing.component';
     AppComponent,
     BookListComponent
   ],
-  exports: [BookListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
