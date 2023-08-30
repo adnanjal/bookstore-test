@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 
 import { environment } from './environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { BookListComponent } from './books/book-listing.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookService } from './book-list/book.service';
+import { BookQuery } from './book-list/book.query';
+import { BookStore } from './book-list/book.store';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookListComponent
+    BookListComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { BookListComponent } from './books/book-listing.component';
     HttpClientModule,
     environment.production ? [] : AkitaNgDevtools?.forRoot(),
   ],
-  providers: [],
+  providers: [BookStore, BookService, BookQuery],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
