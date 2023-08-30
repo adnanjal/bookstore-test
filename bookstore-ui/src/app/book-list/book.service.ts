@@ -19,6 +19,7 @@ export class BookService {
     this.http.get<Book[]>(environment.apiURL + 'Book/ByPage?page=' + page)
   .pipe(
     tap(books => {
+      console.log(books);
       this.bookStore.set(books);
     }),
     catchError(error => {
@@ -34,28 +35,28 @@ export class BookService {
 
     var book1: Book = {
       id: 1,
-      title: "T1",
-      description: "Desc1"
+      Title: "T1",
+      Description: "Desc1"
     };
   var book2: Book = {
       id: 2,
-      title: "T2",
-      description: "Desc2"
+      Title: "T2",
+      Description: "Desc2"
     };
   var book3: Book = {
       id: 3,
-      title: "T3",
-      description: "Desc3"
+      Title: "T3",
+      Description: "Desc3"
     };
   var book4: Book = {
       id: 4,
-      title: "T4",
-      description: "Desc4"
+      Title: "T4",
+      Description: "Desc4"
     };
   var book5: Book = {
       id: 5,
-      title: "T4",
-      description: "Desc4"
+      Title: "T4",
+      Description: "Desc4"
     };
 
   data.add(book1);

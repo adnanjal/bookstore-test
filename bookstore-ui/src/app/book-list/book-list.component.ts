@@ -17,8 +17,8 @@ export class BookListComponent {
   addBook() {
     const book: Book = {
       id: 1,
-      title: 'New Book Title',
-      description: 'New Description',
+      Title: 'New Book Title',
+      Description: 'New Description',
     };
     this.bookService.add(book);
   }

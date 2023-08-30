@@ -15,6 +15,18 @@ var builder = WebApplication.CreateBuilder(args);
 //I recommend running the project using IIS. Docker would be a best case scenario for the architecture. Unfortunately, the web.config
 //would require additional details like host IP address to run correctly making it harder to demo like this. 
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
+
 // Add services to the container.
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -72,6 +84,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
