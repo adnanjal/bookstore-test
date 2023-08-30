@@ -32,9 +32,9 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 ////adds user identity authentication
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-        .AddEntityFrameworkStores<AppDbContext>()
-        .AddDefaultTokenProviders();
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+//        .AddEntityFrameworkStores<AppDbContext>()
+//        .AddDefaultTokenProviders();
 
 // JWT Authentication using Asp.net identity
 // Disabled as it needs additional setup

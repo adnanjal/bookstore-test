@@ -1,0 +1,22 @@
+# Local development dependencies setup
+#
+# This docker compose file is for setting up local development infrastructure:
+# * MS SQL Server, for the database, localhost,11433 (`sa` / `TMSGlobalDbPass123`)
+# * Papercut, for email, http://localhost:37408/
+
+services:
+
+  db:
+    container_name: bookstore_db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+      - SA_PASSWORD=BookstorePass123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - 31434:1433
+    restart: always
+    
+volumes:
+  tmsvol:
+    external: true
